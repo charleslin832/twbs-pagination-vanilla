@@ -1,6 +1,10 @@
 ﻿# twbsPagination
 ## **<font color=#c33>修改自twbs-pagination<br>調整成 vanilla javascript版本</font>**
 ## **新增參數backward, forward, backwardClass, forwardClass**
+## 原檔案
+```js
+https://josecebe.github.io/twbs-pagination/
+```
 
 ## 使用方式
 ```js
