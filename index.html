@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<!-- H5以外 -->
+	<meta name="open-default-browser" content="true">
+	<!-- meta -->
+	<title>twbsPagination-vanilla</title>
+	<meta name="description" content="">
+	<!-- jQuery -->
+	<!-- <script src="https://frontend.beanfun.com/library/jquery/jquery-min.js"></script> -->
+	<!-- <script src="https://frontend.beanfun.com/library/jquery/jquery-migrate-min.js"></script> -->
+</head>
+
+<body>
+	<style>
+		ul.pagination, .pagination ul{
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.pagination li, .pagination ul li{
+			padding: 0 .25em;
+			margin: 0 .125em;
+			font-size: 16px;
+			background-color: #ccc;
+		}
+		ul.pagination li a, .pagination ul li a{
+			text-decoration: none;
+			color: #333;
+		}
+		ul.pagination li.active a, .pagination ul li.active a{
+			font-weight: bold;
+		}
+		ul.pagination li.disabled, .pagination ul li.disabled{
+			background-color: #eee;
+		}
+		ul.pagination li.disabled a, .pagination ul li.disabled a{
+			color: #999;
+		}
+	</style>
+	<div class="pagination" data-num="1"></div>
+	<ul class="pagination" data-num="2"></ul>
+
+	<script src="twbs-pagination-vanilla.js"></script>
+
+	<script>
+		let selector = document.querySelectorAll('.pagination');
+		console.log(selector);
+
+		// selector.twbsPagination({
+		// 	totalPages: 8,
+		// 	startPage: 7,
+		// 	visiblePages: 5,
+		// 	onPageClick: function (event, page) {
+		// 		console.log(event, page);
+		// 	}
+		// });
+		// $('.pagination').twbsPagination({
+		// 	totalPages: 8,
+		// 	startPage: 7,
+		// 	visiblePages: 5,
+		// 	loop: true,
+		// });
+		let selector1 = document.querySelectorAll('.pagination[data-num="1"]');
+		let selector2 = document.querySelectorAll('.pagination[data-num="2"]');
+		selector1.twbsPagination({
+			totalPages: 4,
+			startPage: 1,
+			visiblePages: 3,
+		});
+		// selector1.twbsPagination({
+		// 	totalPages: 18,
+		// 	startPage: 2,
+		// 	visiblePages: 3,
+		// });
+		// selector1.twbsPagination('enable');
+		selector2.twbsPagination({
+			totalPages: 13,
+			startPage: 3,
+			visiblePages: 5,
+			onPageClick: function (event, page) {
+				console.log('page', page);
+			}
+		});
+		// selector2.twbsPagination('disable');
+	</script>
+</body>
+</html>
